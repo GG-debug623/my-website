@@ -8,7 +8,9 @@ import Planning from './pages/Planning';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
 import Logout from './pages/Logout';
-import Magasin from './pages/magasin';  // Import the Magasin page
+import Magasin from './pages/magasin'; 
+import AuthPage from './components/AuthPage';
+
 import './App.css';
 
 function App() {
@@ -26,8 +28,10 @@ function App() {
             <Route path="/settings" element={<Settings />} />
             <Route path="/magasin" element={<Magasin />} />  {/* Add route for Magasin */}
             <Route path="/logout" element={<Logout />} />
-            <Route path="/" element={<Dashboard />} /> {/* Default route */}
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="/" element={<Dashboard />} />
           </Routes>
+
         </div>
       </div>
     </Router>
