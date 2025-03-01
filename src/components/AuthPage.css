@@ -1,38 +1,111 @@
-
-.auth-container {
-    width: 300px;
-    margin: 100px auto;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Auth Container */
+  .auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
     text-align: center;
-  }
-  
-  .auth-container h2 {
     margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
   }
   
-  .auth-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  /* Form Styling */
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
   
-  .auth-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+  .auth-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Add space between label and input */
+  }
+  
+  .auth-form input,
+  .auth-form select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .auth-form input:focus,
+  .auth-form select:focus {
+    border-color: #4CAF50;
+  }
+  
+  .auth-form button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
   }
   
-  .auth-container p {
-    margin-top: 10px;
-    color: #007bff;
+  .auth-form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Toggle Between Sign Up / Log In */
+  .toggle-form {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .toggle-form button {
+    background-color: #2196F3;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+  }
+  
+  .toggle-form button:hover {
+    background-color: #1976D2;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 500px) {
+    .auth-container {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    .auth-form input,
+    .auth-form select,
+    .auth-form button {
+      font-size: 14px;
+    }
   }
   
