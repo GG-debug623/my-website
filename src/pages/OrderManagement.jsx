@@ -14,16 +14,20 @@ const OrderManagement = () => {
     material: "",
   });
 
+  const [activeButton, setActiveButton] = useState(null);
+
   const handleChange = (e) => {
     setOrder({ ...order, [e.target.name]: e.target.value });
   };
 
   const handleProjectType = (type) => {
     setOrder({ ...order, projectType: type });
+    setActiveButton(type);
   };
 
   const handleMachineType = (type) => {
     setOrder({ ...order, machineType: type });
+    setActiveButton(type);
   };
 
   return (
@@ -53,7 +57,7 @@ const OrderManagement = () => {
         <label>Deadline</label>
         <input type="date" name="deadline" value={order.deadline} onChange={handleChange} />
       </div>
-      <div className="form-group">
+      <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <label>Gestion de machines</label>
         <div className="button-group">
           <button className={order.machineType === "Tournage" ? "active" : ""} onClick={() => handleMachineType("Tournage")}>Tournage</button>
@@ -72,9 +76,9 @@ const OrderManagement = () => {
         <label>Matière première</label>
         <input type="text" name="material" value={order.material} onChange={handleChange} placeholder="matière" />
       </div>
-      <div className="form-actions">
-        <button className="add-btn">Ajouter</button>
-        <button className="delete-btn">Supprimer</button>
+      <div className="form-actions" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <button className={activeButton === "add" ? "active" : ""} onClick={() => setActiveButton("add")}>Ajouter</button>
+        <button className={activeButton === "delete" ? "active" : ""} onClick={() => setActiveButton("delete")} style={{ marginLeft: '10px' }}>Supprimer</button>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for routing
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 import './AuthPage.css';
 
 const Auth = () => {
@@ -9,6 +9,8 @@ const Auth = () => {
   const [password, setPassword] = useState('');
   const [accountType, setAccountType] = useState('plannification');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate(); // Initialize useNavigate for redirection
 
   // Handle form submission for Sign Up
   const handleSignup = (e) => {
@@ -24,6 +26,9 @@ const Auth = () => {
     setEmail('');
     setPassword('');
     setAccountType('plannification');
+    
+    // After successful signup, redirect to Dashboard (or another route)
+    navigate('/dashboard');
   };
 
   // Handle form submission for Login
@@ -38,6 +43,9 @@ const Auth = () => {
     console.log('Login Data:', loginData);
     setEmail('');
     setPassword('');
+
+    // After successful login, redirect to Dashboard
+    navigate('/dashboard');
   };
 
   return (

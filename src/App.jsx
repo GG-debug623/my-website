@@ -13,16 +13,18 @@ import AuthPage from './components/AuthPage';
 
 import './App.css';
 
-function Layout() {
+function AppContent() {
   const location = useLocation();
   
-  // Hide Navbar & Sidebar on the auth page
-  const isAuthPage = location.pathname === "/auth";
+  // Hide Navbar & Sidebar only on the auth page
+  const isAuthPage = location.pathname === "/auth" || location.pathname === "/";
 
   return (
     <div className="app">
+      {/* Only show Navbar and Sidebar when not on the Auth page */}
       {!isAuthPage && <Navbar />}
       {!isAuthPage && <Sidebar />}
+      
       <div className="main-content">
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
@@ -33,7 +35,8 @@ function Layout() {
           <Route path="/magasin" element={<Magasin />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/auth" element={<AuthPage />} />
-          <Route path="/" element={<Dashboard />} />
+          {/* Default route now points to AuthPage */}
+          <Route path="/" element={<AuthPage />} />
         </Routes>
       </div>
     </div>
@@ -43,7 +46,7 @@ function Layout() {
 function App() {
   return (
     <Router>
-      <Layout />
+      <AppContent />
     </Router>
   );
 }
