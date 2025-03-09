@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
@@ -8,8 +8,9 @@ import Planning from './pages/Planning';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
 import Logout from './pages/Logout';
-import Magasin from './pages/magasin';
+import Magasin from './pages/Magasin';
 import AuthPage from './components/AuthPage';
+import ForgotPassword from './components/ForgotPassword'; // Import ForgotPassword component
 
 import './App.css';
 
@@ -17,11 +18,11 @@ function AppContent() {
   const location = useLocation();
   
   // Hide Navbar & Sidebar only on the auth page
-  const isAuthPage = location.pathname === "/auth" || location.pathname === "/";
+  const isAuthPage = location.pathname === "/auth" || location.pathname === "/" || location.pathname === "/forgot-password"; // Also hide on forgot password page
 
   return (
     <div className="app">
-      {/* Only show Navbar and Sidebar when not on the Auth page */}
+      {/* Only show Navbar and Sidebar when not on the Auth page or ForgotPassword page */}
       {!isAuthPage && <Navbar />}
       {!isAuthPage && <Sidebar />}
       
@@ -35,8 +36,10 @@ function AppContent() {
           <Route path="/magasin" element={<Magasin />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/auth" element={<AuthPage />} />
-          {/* Default route now points to AuthPage */}
           <Route path="/" element={<AuthPage />} />
+          
+          {/* Add ForgotPassword route */}
+          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </div>
     </div>

@@ -1,111 +1,153 @@
-/* Basic Reset */
+/* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Auth Container */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Auth Page Background */
+body {
+  background: linear-gradient(to right, #3a3a3a, #1f1f1f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Auth Container */
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  min-height: 450px;
+  padding: 25px;
+  background: rgba(50, 50, 50, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+h2 {
+  font-size: 26px;
+  color: #FAC046;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Form Styling */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
+}
+
+.auth-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d1d1;
+}
+
+.auth-form input,
+.auth-form select {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 6px;
+  background: #2c2c2c;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #FAC046;
+  box-shadow: 0 0 5px rgba(250, 192, 70, 0.5);
+}
+
+.auth-form button {
+  padding: 12px;
+  font-size: 16px;
+  background: #FAC046;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background: #e5a935;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Toggle Between Sign Up / Log In */
+.toggle-form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.toggle-form button {
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-form button:hover {
+  color: #e5a935;
+}
+
+.toggle-form p {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.toggle-form a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.toggle-form a:hover {
+  color: #e5a935;
+}
+
+/* Responsive Styling */
+@media (max-width: 500px) {
   .auth-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
   }
-  
+
   h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+      font-size: 22px;
   }
-  
-  /* Form Styling */
-  .auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .auth-form div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; /* Add space between label and input */
-  }
-  
+
   .auth-form input,
-  .auth-form select {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-  }
-  
-  .auth-form input:focus,
-  .auth-form select:focus {
-    border-color: #4CAF50;
-  }
-  
+  .auth-form select,
   .auth-form button {
-    padding: 12px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .auth-form button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Error Message */
-  .error-message {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  /* Toggle Between Sign Up / Log In */
-  .toggle-form {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .toggle-form button {
-    background-color: #2196F3;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .toggle-form button:hover {
-    background-color: #1976D2;
-  }
-  
-  /* Responsive Styling */
-  @media (max-width: 500px) {
-    .auth-container {
-      padding: 15px;
-    }
-  
-    h2 {
-      font-size: 20px;
-    }
-  
-    .auth-form input,
-    .auth-form select,
-    .auth-form button {
       font-size: 14px;
-    }
   }
-  
+}
