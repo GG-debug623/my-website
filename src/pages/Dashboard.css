@@ -1,0 +1,121 @@
+body {
+    background-color: #1a1a2e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .dashboard {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .search-bar {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Wallet */
+  .wallet {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .wallet-box {
+    flex: 1;
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .savings {
+    background: #8e44ad;
+  }
+  
+  .expenses {
+    background: #e74c3c;
+  }
+  
+  .investment {
+    background: #f39c12;
+  }
+  
+  /* Order History */
+  .history {
+    margin-top: 20px;
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #555;
+  }
+  
+  /* Date Filter */
+  .date-filter {
+    margin-top: 20px;
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 8px;
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Progress Bars */
+  .progress {
+    margin-top: 20px;
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .progress-bar {
+    margin-bottom: 10px;
+  }
+  
+  .bar {
+    height: 8px;
+    background: orange;
+    border-radius: 5px;
+  }
+  Dashboard {
+    width: 100%; /* Full width for very small screens */
+    margin-left: 0;
+  }
+}
