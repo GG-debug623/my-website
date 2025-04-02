@@ -13,7 +13,8 @@ body {
   }
   .dashboard {
     width: 1200px;
-    
+    margin-left:10%;
+    margin-top:6% ;
   }
   
   /* Header */

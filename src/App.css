@@ -48,42 +48,4 @@ body, html {
 
 
 
-/* Order Management Form */
-.order-management {
-  width: 100%;
-  max-width: 900px; /* Form width shouldn't exceed 900px */
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 0 auto; /* Center the form */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Input and Button Styles */
-.order-management input,
-.order-management select,
-.order-management button {
-  width: 100%; /* Ensure the inputs and button stretch */
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #d1d1d1;
-  font-size: 14px;
-}
-
-/* Button Styles */
-.order-management button {
-  background-color: #1e87f0;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-}
-
-.order-management button:hover {
-  background-color: #174db3;
-}
 

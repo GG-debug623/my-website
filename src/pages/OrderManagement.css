@@ -2,9 +2,10 @@
 
 /* Base Styles */
 
-.order-management-container {
-  width: 1200px;
-  
+.order-management{
+ 
+  margin-left:15%;
+  margin-top:3% ; 
 }
 
 .order-management-container {
@@ -146,4 +147,31 @@
 .icon {
   color: #495057;
   margin-right: 0.5rem;
+}
+/* Order Management Form */
+
+
+/* Input and Button Styles */
+.order-management input,
+.order-management select,
+.order-management button {
+  width: 100%; /* Ensure the inputs and button stretch */
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #d1d1d1;
+  font-size: 14px;
+}
+
+/* Button Styles */
+.order-management button {
+  background-color: #1e87f0;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.order-management button:hover {
+  background-color: #174db3;
 }

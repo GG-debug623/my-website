@@ -35,7 +35,6 @@ function AppContent() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/magasin" element={<Magasin />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/auth" element={<AuthPage />} />
           <Route path="/" element={<AuthPage />} />
           
           {/* Add ForgotPassword route */}
