@@ -49,6 +49,8 @@ const Auth = () => {
   };
 
   return (
+    <>
+    <img src="logo.jpg" alt="Logo" className="logo" />
     <div className="auth-container">
       <h2>{isSignup ? 'Sign Up' : 'Log In'}</h2>
       <form onSubmit={isSignup ? handleSignup : handleLogin} className="auth-form">
@@ -58,6 +60,7 @@ const Auth = () => {
           <div>
             <label htmlFor="username">Username:</label>
             <input
+              placeholder='username...'
               type="text"
               id="username"
               value={username}
@@ -70,6 +73,7 @@ const Auth = () => {
         <div>
           <label htmlFor="email">Email:</label>
           <input
+            placeholder='email...'
             type="email"
             id="email"
             value={email}
@@ -77,18 +81,6 @@ const Auth = () => {
             required
           />
         </div>
-
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-
         {isSignup && (
           <div>
             <label htmlFor="accountType">Account Type:</label>
@@ -104,6 +96,32 @@ const Auth = () => {
           </div>
         )}
 
+
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            placeholder='password...'
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="confirmPassword">Confirm password:</label>
+          <input
+            placeholder='confirm password...'
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+       
         <button type="submit">{isSignup ? 'Sign Up' : 'Log In'}</button>
       </form>
 
@@ -122,7 +140,9 @@ const Auth = () => {
         </p>
       </div>
     </div>
+    </>
   );
+ 
 };
 
 export default Auth;

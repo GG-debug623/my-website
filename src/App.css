@@ -5,8 +5,13 @@ body {
   height: 100%; /* Full height for body */
   display: flex;
   flex-direction: column;
-}
 
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrollbars */
+}
 /* App Layout */
 .app {
   display: flex;
@@ -30,14 +35,14 @@ body {
 
 /* Main Content */
 .main-content {
-  margin-top: 60px; /* Space to avoid overlap with the navbar */
-  margin-left: 250px; /* Sidebar space */
-  padding: 20px;
-  background-color: #f4f4f4;
+  
+  height: 100%;
   flex: 1;
-  overflow-y: auto; /* Make the content scrollable if it overflows */
+  
   transition: all 0.3s ease;
-  height: calc(100vh - 60px); /* Take the full height of the viewport minus the navbar height */
+  margin-top: 5%;
+  margin-bottom: 5%;
+
 }
 
 /* Responsive Design */
