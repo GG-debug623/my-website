@@ -12,16 +12,17 @@ import {
 } from "lucide-react";
 
 // Define inventory item type
-interface InventoryItem {
-  reference: string;
-  name: string;
-  quantity: number;
-  reservation: number;
-  availability: number;
-  status: string;
-}
+/**
+ * @typedef {Object} InventoryItem
+ * @property {string} reference - The reference of the item.
+ * @property {string} name - The name of the item.
+ * @property {number} quantity - The quantity of the item.
+ * @property {number} reservation - The reservation count of the item.
+ * @property {number} availability - The availability count of the item.
+ * @property {string} status - The status of the item.
+ */
 
-const statusClasses: { [key: string]: string } = {
+const statusClasses = {
   "En stock": "bg-green-100 text-green-800",
   "En Repture": "bg-red-100 text-red-800",
   "A Commander": "bg-yellow-100 text-yellow-800",
@@ -29,7 +30,7 @@ const statusClasses: { [key: string]: string } = {
 };
 
 const Magasin = () => {
-  const [items] = useState<InventoryItem[]>([
+  const [items] = useState([
     { reference: "AC24-0042", name: "Product A", quantity: 10, reservation: 10, availability: 0, status: "En Repture" },
     { reference: "PU-2024-010", name: "Product B", quantity: 10, reservation: 2, availability: 2, status: "A Commander" },
     { reference: "PS-2024-001", name: "Product C", quantity: 12, reservation: 1, availability: 11, status: "En stock" },
