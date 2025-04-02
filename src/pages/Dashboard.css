@@ -2,12 +2,18 @@ body {
     background-color: #1a1a2e;
     color: #fff;
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 0px;
   }
+  .Dashboard-container {
+    padding: 2rem;
   
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333; /* Default text color set to dark */
+  }
   .dashboard {
-    max-width: 1000px;
-    margin: auto;
+    width: 1200px;
+    
   }
   
   /* Header */
@@ -69,8 +75,8 @@ body {
   }
   
   table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 60%;
+    border-collapse: 60%;
     margin-top: 10px;
   }
   
@@ -87,6 +93,7 @@ body {
     padding: 15px;
     border-radius: 10px;
     text-align: center;
+    height: 100PX
   }
   
   button {
@@ -98,6 +105,9 @@ body {
   }
   
   /* Progress Bars */
+  .progress {
+    width: 50%;
+  }
   .progress {
     margin-top: 20px;
     background: #333;
@@ -118,4 +128,7 @@ body {
     width: 100%; /* Full width for very small screens */
     margin-left: 0;
   }
+.sec{
+  display : flex;
+  justify-content: space-between ;
 }

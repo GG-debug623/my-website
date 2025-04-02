@@ -6,33 +6,32 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Auth Page Background */
+/* Background */
 body {
-  background: linear-gradient(to right, #3a3a3a, #1f1f1f);
+  background: #dbd9ec; /* Light purple background */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-/* Auth Container */
+/* Form Container */
 .auth-container {
-  width: 100%;
-  max-width: 400px;
-  min-height: 450px;
+  width: 400px;
   padding: 25px;
-  background: rgba(50, 50, 50, 0.9);
-  border-radius: 10px;
+  background: #1c1b22; /* Dark purple/black */
+  border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
   text-align: center;
 }
 
+/* Title */
 h2 {
-  font-size: 26px;
-  color: #FAC046;
+  font-size: 28px;
+  color: white;
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: Poppins,sans-serif;
 }
 
 /* Form Styling */
@@ -42,112 +41,81 @@ h2 {
   gap: 15px;
 }
 
-.auth-form div {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 5px;
-}
-
 .auth-form label {
   font-size: 14px;
   font-weight: 500;
   color: #d1d1d1;
+  text-align: left;
 }
 
+/* Inputs & Select */
 .auth-form input,
 .auth-form select {
-  padding: 12px;
+  padding: 16px;
   font-size: 16px;
-  border: 2px solid #444;
-  border-radius: 6px;
-  background: #2c2c2c;
-  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2c2b34;
+  color: white;
   outline: none;
   transition: 0.3s;
 }
 
 .auth-form input:focus,
 .auth-form select:focus {
-  border-color: #FAC046;
-  box-shadow: 0 0 5px rgba(250, 192, 70, 0.5);
+  border-color: #6e5edf;
+  box-shadow: 0 0 5px rgba(110, 93, 223, 0.5);
 }
 
+/* Password Toggle */
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+/* Submit Button */
 .auth-form button {
   padding: 12px;
   font-size: 16px;
-  background: #FAC046;
-  color: #1f1f1f;
+  background: #d1d1e4;
+  color: black;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .auth-form button:hover {
-  background: #e5a935;
+  background: #bdbdcc;
 }
 
-/* Error Message */
-.error-message {
-  color: #ff4d4d;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Toggle Between Sign Up / Log In */
+/* Toggle Between Forms */
 .toggle-form {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.toggle-form button {
-  background: none;
-  color: #fff;
+  margin-top: 15px;
   font-size: 14px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.toggle-form button:hover {
-  color: #e5a935;
-}
-
-.toggle-form p {
   color: white;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
 }
 
 .toggle-form a {
-  color: white;
+  color: #bdbdcc;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: 600;
 }
 
 .toggle-form a:hover {
-  color: #e5a935;
-}
-
-/* Responsive Styling */
-@media (max-width: 500px) {
-  .auth-container {
-      padding: 20px;
-  }
-
-  h2 {
-      font-size: 22px;
-  }
-
-  .auth-form input,
-  .auth-form select,
-  .auth-form button {
-      font-size: 14px;
-  }
+  color: #d1d1e4;
 }

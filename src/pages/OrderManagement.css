@@ -1,116 +1,149 @@
-/* General Styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+/* ORDERMANAGEMENT.CSS */
+
+/* Base Styles */
+
+.order-management-container {
+  width: 1200px;
+  
 }
 
-/* App Layout */
-.app {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  position: relative;
+.order-management-container {
+  padding: 0px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 PX;
+  color: #333; /* Default text color set to dark */
 }
 
-/* Navbar - Fixed at the top */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px; /* Navbar height */
-  background-color: #333;
-  color: white;
-  padding: 15px;
-  z-index: 1000;
-}
-
-/* Sidebar - Fixed at the left */
-.sidebar {
-  position: fixed;
-  top: 60px; /* Start below the navbar */
-  left: 0;
-  width: 250px; /* Sidebar width */
-  height: calc(100vh - 60px); /* Full height minus navbar */
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  z-index: 1000;
-  overflow-y: auto; /* Scroll if the sidebar content is too long */
-}
-
-/* Main Content */
-.main-content {
-  margin-top: 60px; /* Offset for the navbar */
-  margin-left: 250px; /* Offset for the sidebar */
-  padding: 20px;
-  background-color: #f4f4f4;
-  flex: 1;
-  overflow-y: auto;
-  transition: all 0.3s ease;
-  height: calc(100vh - 60px); /* Make sure the content area adjusts with the height of the screen */
-}
-
-/* Order Management Page - Full Width Form */
-.order-management {
-  width: calc(100% - 250px); /* Full width minus the sidebar */
-  padding: 20px;
+/* Table Styles */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-left: 250px; /* Ensure it's placed after the sidebar */
+}
+
+.orders-table th, 
+.orders-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+  color: #333; /* Ensure text is dark */
+}
+
+.orders-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+
+
+/* Priority Badges */
+.priority-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.priority-high {
+  background-color: #ffcccc;
+  color: #cc0000;
+}
+
+.priority-medium {
+  background-color: #ffdd99;
+  color: #cc8400;
+}
+
+.priority-low {
+  background-color: #99ccff;
+  color: #004080;
+}
+
+.priority-lowest {
+  background-color: #e6ffe6;
+  color: #006600;
+}
+
+/* Controls Header */
+.controls-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 900px; /* Ensure the form doesn't shrink too small */
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-/* Input and Button Styles */
-.order-management input,
-.order-management select,
-.order-management button {
-  width: 100%; /* Full width of the parent container */
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #d1d1d1;
-  font-size: 14px;
+.search-box {
+  display: flex;
+  align-items: center;
 }
 
-/* Button Styles */
-.order-management button {
-  background-color: #1e87f0;
-  color: white;
-  font-weight: bold;
+.search-box input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-right: 1rem;
+  color: #333; /* Dark text */
+}
+
+.status-filter {
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  color: #333; /* Dark text */
+}
+
+.download-btn {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.add-order-btn {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 0.85rem;
+  color: white; /* Button text remains white */
 }
 
-.order-management button:hover {
-  background-color: #174db3;
+.action-btn.view-btn {
+  background-color: #17a2b8;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 60px; /* Adjust for smaller sidebar on medium screens */
-  }
-
-  .order-management {
-    width: calc(100% - 60px); /* Adjust form width for smaller sidebar */
-    margin-left: 60px; /* Ensure it's still placed after the sidebar */
-  }
+.action-btn.edit-btn {
+  background-color: #28a745;
 }
 
-@media (max-width: 480px) {
-  .main-content {
-    margin-left: 0; /* No sidebar for small screens */
-  }
-
-  .order-management {
-    width: 100%; /* Full width for very small screens */
-    margin-left: 0;
-  }
+/* Icons */
+.search-icon,
+.icon {
+  color: #495057;
+  margin-right: 0.5rem;
 }

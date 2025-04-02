@@ -16,7 +16,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <ul className="sidebar-menu">
         <li>
-          <Link to="/dashboard">
+          <Link to="/ahmed">
             <FaHome /> Dashboard
           </Link>
         </li>

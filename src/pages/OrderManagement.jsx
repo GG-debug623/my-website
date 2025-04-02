@@ -1,84 +1,125 @@
-import React, { useState } from "react";
-import "./OrderManagement.css";
+import React, { useState } from 'react';
+import './OrderManagement.css';
+import { FiDownload, FiPlus, FiSearch } from 'react-icons/fi';
 
 const OrderManagement = () => {
-  const [order, setOrder] = useState({
-    projectCode: "",
-    clientName: "",
-    projectType: "",
-    startDate: "",
-    deadline: "",
-    machineType: "",
-    millingTime: "",
-    turningTime: "",
-    material: "",
-  });
+  // Sample order data
+  const [orders] = useState([
+    {
+      id: 1024,
+      client: 'Mohamed Ali',
+      orderDate: '2023-05-15',
+      deliveryDate: '2023-05-22',
+      status: 'En préparation',
+      priority: 'Haute'
+    },
+    {
+      id: 1025,
+      client: 'Fatma Ben Ahmed',
+      orderDate: '2023-05-16',
+      deliveryDate: '2023-05-25',
+      status: 'Expédié',
+      priority: 'Moyenne'
+    },
+    {
+      id: 1026,
+      client: 'Samir Toumi',
+      orderDate: '2023-05-17',
+      deliveryDate: '2023-05-20',
+      status: 'Livré',
+      priority: 'Urgente'
+    }
+  ]);
 
-  const [activeButton, setActiveButton] = useState(null);
-
-  const handleChange = (e) => {
-    setOrder({ ...order, [e.target.name]: e.target.value });
+  // Status badge styling
+  const getStatusClass = (status) => {
+    switch(status) {
+      case 'Livré': return 'status-delivered';
+      case 'Expédié': return 'status-shipped';
+      case 'En préparation': return 'status-preparing';
+      default: return 'status-pending';
+    }
   };
 
-  const handleProjectType = (type) => {
-    setOrder({ ...order, projectType: type });
-    setActiveButton(type);
-  };
-
-  const handleMachineType = (type) => {
-    setOrder({ ...order, machineType: type });
-    setActiveButton(type);
+  // Priority badge styling
+  const getPriorityClass = (priority) => {
+    switch(priority) {
+      case 'Urgente': return 'priority-high';
+      case 'Haute': return 'priority-medium';
+      case 'Moyenne': return 'priority-low';
+      default: return 'priority-lowest';
+    }
   };
 
   return (
-    <div className="order-management">
-      <h2>Gestion de commande</h2>
-      <div className="form-group">
-        <label>Code du projet</label>
-        <input type="text" name="projectCode" value={order.projectCode} onChange={handleChange} />
-      </div>
-      <div className="form-group">
-        <label>Nom du client</label>
-        <input type="text" name="clientName" value={order.clientName} onChange={handleChange} />
-      </div>
-      <div className="form-group">
-        <label>Nature de projet</label>
-        <div className="button-group">
-          <button className={order.projectType === "pièce unique" ? "active" : ""} onClick={() => handleProjectType("pièce unique")}>Pièce unique</button>
-          <button className={order.projectType === "machine spéciale" ? "active" : ""} onClick={() => handleProjectType("machine spéciale")}>Machine spéciale</button>
-          <button className={order.projectType === "pièces en série" ? "active" : ""} onClick={() => handleProjectType("pièces en série")}>Pièces en série</button>
+    <div className="order-management-container">
+      {/* Header Controls */}
+      <div className="controls-header">
+        <div className="controls-left">
+          <div className="search-box">
+            <FiSearch className="search-icon" />
+            <input 
+              type="text" 
+              placeholder="Filtrer les commandes..." 
+            />
+          </div>
+          <select className="status-filter">
+            <option>Tous les statuts</option>
+            <option>En préparation</option>
+            <option>Expédié</option>
+            <option>Livré</option>
+          </select>
+        </div>
+        
+        <div className="controls-right">
+          <button className="download-btn">
+            <FiDownload className="icon" /> Télécharger
+          </button>
+          <button className="add-order-btn">
+            <FiPlus className="icon" /> Ajouter Commande
+          </button>
         </div>
       </div>
-      <div className="form-group">
-        <label>Date de démarrage</label>
-        <input type="date" name="startDate" value={order.startDate} onChange={handleChange} />
-      </div>
-      <div className="form-group">
-        <label>Deadline</label>
-        <input type="date" name="deadline" value={order.deadline} onChange={handleChange} />
-      </div>
-      <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <label>Gestion de machines</label>
-        <div className="button-group">
-          <button className={order.machineType === "Tournage" ? "active" : ""} onClick={() => handleMachineType("Tournage")}>Tournage</button>
-          <button className={order.machineType === "Fraisage" ? "active" : ""} onClick={() => handleMachineType("Fraisage")}>Fraisage</button>
-        </div>
-      </div>
-      <div className="form-group">
-        <label>Temps fraisage</label>
-        <input type="number" name="millingTime" value={order.millingTime} onChange={handleChange} placeholder="minutes" />
-      </div>
-      <div className="form-group">
-        <label>Temps tournage</label>
-        <input type="number" name="turningTime" value={order.turningTime} onChange={handleChange} placeholder="minutes" />
-      </div>
-      <div className="form-group">
-        <label>Matière première</label>
-        <input type="text" name="material" value={order.material} onChange={handleChange} placeholder="matière" />
-      </div>
-      <div className="form-actions" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <button className={activeButton === "add" ? "active" : ""} onClick={() => setActiveButton("add")}>Ajouter</button>
-        <button className={activeButton === "delete" ? "active" : ""} onClick={() => setActiveButton("delete")} style={{ marginLeft: '10px' }}>Supprimer</button>
+
+      {/* Orders Table */}
+      <div className="table-responsive">
+        <table className="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom Client</th>
+              <th>Date de Commande</th>
+              <th>Date de Livraison</th>
+              <th>Statut</th>
+              <th>Priorité</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map(order => (
+              <tr key={order.id}>
+                <td style={{color: '#333'}}>{order.id}</td>
+                <td style={{color: '#333'}}>{order.client}</td>
+                <td style={{color: '#333'}}>{order.orderDate}</td>
+                <td style={{color: '#333'}}>{order.deliveryDate}</td>
+                <td>
+                  <span className={`status-badge ${getStatusClass(order.status)}`}>
+                    {order.status}
+                  </span>
+                </td>
+                <td>
+                  <span className={`priority-badge ${getPriorityClass(order.priority)}`}>
+                    {order.priority}
+                  </span>
+                </td>
+                <td>
+                  <button className="action-btn view-btn">Voir</button>
+                  <button className="action-btn edit-btn">Modifier</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
