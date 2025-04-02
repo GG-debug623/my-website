@@ -2,18 +2,16 @@
 
 /* Base Styles */
 
-.order-management{
- 
-  margin-left:15%;
-  margin-top:3% ; 
-}
+
 
 .order-management-container {
   padding: 0px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 1200px;
   margin: 0 PX;
-  color: #333; /* Default text color set to dark */
+  color: #333;
+  margin-left:8%;
+  margin-top:3% ;  /* Default text color set to dark */
 }
 
 /* Table Styles */
