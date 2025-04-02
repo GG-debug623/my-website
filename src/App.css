@@ -2,15 +2,17 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  height: 100%; /* Full height for body */
-  display: flex;
-  flex-direction: column;
-
+  min-height: 100vh; /* Ensures full viewport height */
+  overflow-y: auto; /* Enables scrolling */
+}
+.container {  
+  min-height: 150vh; /* Make the content taller than the viewport */
 }
 html, body {
   height: 100%;
   width: 100%;
-  overflow: hidden; /* Prevent scrollbars */
+  overflow: hidden; 
+  overflow-y: auto;/* Prevent scrollbars */
 }
 /* App Layout */
 .app {

@@ -25,12 +25,20 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
+.logo {
+  width: 300px;
+  height: 100px;
+
+  display: block; 
+  margin: 0 auto; /* Center the logo */
+  margin-bottom: -20px; /* Reduce space below the logo */
+  margin-top: 20px ;}
 
 /* Title */
 h2 {
   font-size: 28px;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: 700;
   font-family: Poppins,sans-serif;
 }
@@ -39,7 +47,7 @@ h2 {
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
 }
 
 .auth-form label {
@@ -127,5 +135,7 @@ h2 {
   font-size: 16px;
 }
 
-
+.auth-container{
+  margin-bottom: 20PX;
+}
 

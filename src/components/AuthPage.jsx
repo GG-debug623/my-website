@@ -50,7 +50,7 @@ const Auth = () => {
 
   return (
     <>
-    <img src="logo.jpg" alt="Logo" className="logo" />
+    <img src="logoo.png" alt="Logo" className="logo" />
     <div className="auth-container">
       <h2>{isSignup ? 'Sign Up' : 'Log In'}</h2>
       <form onSubmit={isSignup ? handleSignup : handleLogin} className="auth-form">
