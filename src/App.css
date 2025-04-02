@@ -1,24 +1,26 @@
 /* General Styles */
-body {
+body, html {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  min-height: 100vh; /* Ensures full viewport height */
+  height: auto;
+  width: 100%;
   overflow-y: auto; /* Enables scrolling */
 }
+
 .container {  
   min-height: 150vh; /* Make the content taller than the viewport */
 }
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden; 
-  overflow-y: auto;/* Prevent scrollbars */
-}
+
 /* App Layout */
 .app {
   display: flex;
   flex-direction: row;
-  height: 100%; /* Ensure the layout fills the entire page */
+  
+  justify-content: center;
+  align-items: center;
+
+
   position: relative;
 }
 
@@ -28,7 +30,7 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px; /* Height of your navbar */
+  height: 60px; /* Height of the navbar */
   background-color: #333;
   color: white;
   padding: 15px;
@@ -37,28 +39,14 @@ html, body {
 
 /* Main Content */
 .main-content {
-  
-  height: 100%;
   flex: 1;
-  
+
   transition: all 0.3s ease;
-  margin-top: 5%;
-  margin-bottom: 5%;
-
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 60px; /* Adjust sidebar space for medium screens */
-  }
-}
 
-@media (max-width: 480px) {
-  .main-content {
-    margin-left: 0; /* Remove sidebar space for small screens */
-  }
-}
+
+
 
 /* Order Management Form */
 .order-management {
@@ -92,15 +80,10 @@ html, body {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  border: none;
 }
 
 .order-management button:hover {
   background-color: #174db3;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-  .order-management {
-    width: 95%; /* Make the form smaller on very small screens */
-  }
-}
